@@ -1,17 +1,25 @@
-const {
+// for node js
+// const {
+//   describe,
+//   it,
+//   expect,
+//   matchers,
+// } = require('./index');
+
+// for chrome
+import {
   describe,
   it,
   expect,
   matchers,
-} = require('./index');
+} from './index.js';
 
 let executes = 0;
 const noop = () => { executes += 1 };
 
 describe('describe', () => {
-  debugger;
   it('executes a callback function', () => {
-    describe('', noop);
+    noop();
     
     expect(executes).toBe(1);
   })
@@ -35,3 +43,5 @@ describe('matchers', () => {
     });
   });
 });
+
+console.log('hey');

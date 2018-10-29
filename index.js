@@ -4,10 +4,10 @@ const expect = exp => matchers(exp);
 const matchers = exp => ({
   toBe: assertion => {
     if (assertion === exp) {
-      console.log('pass');
+      console.log('%cpass', 'color: green');
       return true;
     } else {
-      console.log('fail');
+      console.log('%cfail', 'color: red');
       return false;
     }
   }
@@ -22,9 +22,18 @@ const describe = (desc, fn) => {
   fn();
 }
 
-module.exports = {
+// for node js
+// module.exports = {
+//   describe,
+//   expect,
+//   it,
+//   matchers,
+// }
+
+// for chrome 
+export {
   describe,
   expect,
   it,
   matchers,
-}
+};
